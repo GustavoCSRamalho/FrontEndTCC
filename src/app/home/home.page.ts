@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpServiceService } from '../service/http-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+  data = {
+    email:"",
+    senha: ""
+  }
+
+  constructor(public apiService: HttpServiceService){}
+  ngOnInit() {
+  }
+
+  submitForm(){
+    this.apiService.doLogin(this.data.email,this.data.senha).subscribe((data:String)  => {
+      console.log("Eu aqui porra")
+      console.log(data)
+    })
+  }
 
 }

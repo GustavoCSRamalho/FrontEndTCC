@@ -11,5 +11,9 @@
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "proxies": [{
+    "path": "/*",
+    "proxyUrl": "https://presensor.herokuapp.com"
+}]
 }

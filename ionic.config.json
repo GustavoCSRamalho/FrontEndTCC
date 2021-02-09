@@ -1,5 +1,9 @@
 {
   "name": "mateus-tcc",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "proxies": [{
+    "path": "/*",
+    "proxyUrl": "https://presensor.herokuapp.com"
+}]
 }
